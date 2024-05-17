@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PAINEL DE CHAMADOS</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="reset.css">
+</head>
+
+<body id="newSearch">
+    <header>
+        <h1>PAINEL DE CHAMADOS</h1>
+    </header>
+
+    <Main>
+        <div id="idInput">
+            <h3> Pesquisar: </h3> <input type="text" id="searchInput">
+            <button onclick="search()">Pesquisar</button>
+            <button onclick="reset()">Limpar</button>
+        </div>
+
+        <div id="config_table">
+            <table border="1" id="dataTable">
+
+                <tr>
+                    <th>UNIDADE</th>
+                    <th>ENDEREÇO</th>
+                    <th>CONTATO</th>
+                    <th>TELEFONE</th>
+                    <th>LP</th>
+                    <th>ID</th>
+                    <th>VELOC.</th>
+                    <th>FIBRA ÓPTICA</th>
+                    <th>MPLS</th>
+
+                </tr>
+
+                <tr>
+                    <td>Bela Cintra</td>
+                    <td>Rua Bela Cintra, 385 (concentrador)</td>
+                    <td>GIN - Rede</td>
+                    <td>3396-2967</td>
+                    <td>0764/20</td>
+                    <td>1324862</td>
+                    <td>300 Mbps</td>
+                    <td>10.38.4.3</td>
+                    <td>10.38.7.13</td>
+                </tr>
+
+                <tr>
+                    <td>Sumidouro</td>
+                    <td>Rua Sumidouro,740</td>
+                    <td>Sebastian</td>
+                    <td>3030-2479</td>
+                    <td>11000-3031060890</td>
+                    <td>1324848</td>
+                    <td>10 Mbps</td>
+                    <td>10.38.0.1</td>
+                    <td>10.38.0.7</td>
+                </tr>
+
+                <tr>
+                    <td>CETET</td>
+                    <td>Av.Marquês de S.vicente,2154</td>
+                    <td>Jordina</td>
+                    <td>38718638/3871-8639</td>
+                    <td>11000-3611116092</td>
+                    <td>1336997</td>
+                    <td>10 Mbps</td>
+                    <td>10.38.8.11</td>
+                    <td>10.38.8.1</td>
+                </tr>
+
+                <tr>
+                    <td>DETRAN</td>
+                    <td>Av. Do Estado, 900 Armênia</td>
+                    <td>Tânia/William</td>
+                    <td>3627-8997</td>
+                    <td>11000-3227215691</td>
+                    <td>1324871</td>
+                    <td>10 Mbps</td>
+                    <td style="text-align: center;"> - </td>
+                    <td>10.38.12.1</td>
+                </tr>
+
+                <tr>
+                    <td>EVT-Chico Landi</td>
+                    <td>Rua Vilela,575</td>
+                    <td>Martinita / Raul</td>
+                    <td>2941-5830/2942-8138</td>
+                    <td>11000-2097403096</td>
+                    <td>1324921</td>
+                    <td>10 Mbps</td>
+                    <td style="text-align: center;"> - </td>
+                    <td>10.38.88.1</td>
+                </tr>
+
+                <tr>
+                    <td>GET SE (GET-3)</td>
+                    <td>Rua Emília Marengo, 1073</td>
+                    <td>Marcos</td>
+                    <td>2671-6755 ramal227</td>
+                    <td>11000-2671145899</td>
+                    <td>1324873</td>
+                    <td>10 Mbps</td>
+                    <td style="text-align: center;"> - </td>
+                    <td>10.38.132.1</td>
+                </tr>
+
+                <tr>
+                    <td>GET SU (GET-4)</td>
+                    <td>Rua Dona Brigida, 721/Av.Lins de Vasconcelos,2956</td>
+                    <td>Prado</td>
+                    <td>5084-6600 ramal238</td>
+                    <td>11000-5549771998</td>
+                    <td>1324866</td>
+                    <td>10 Mbps</td>
+                    <td>10.38.24.3</td>
+                    <td>10.38.24.1</td>
+                </tr>
+                <tr>
+                    <td>DCS-4</td>
+                    <td>Praça Nina Rodrigues s/n</td>
+                    <td>César</td>
+                    <td>3208-5700</td>
+                    <td>11000-3208095694</td>
+                    <td>1324867</td>
+                    <td>10 Mbps</td>
+                    <td style="text-align: center;"> - </td>
+                    <td>10.38.44.1</td>
+                </tr>
+
+                <tr>
+                    <td>GET SU -PA(GET-4 -PA)</td>
+                    <td>Rua Pedra Azul,76</td>
+                    <td>Jacira / Denir</td>
+                    <td>5571-7923</td>
+                    <td>11000-5549771394</td>
+                    <td>1324841</td>
+                    <td>10 Mbps</td>
+                    <td style="text-align: center;">-</td>
+                    <td>10.38.40.1</td>
+                </tr>
+
+                <tr>
+                    <td>GET OE (GET-5)</td>
+                    <td>Rua Laguna, 1170</td>
+                    <td>Moises/Romeira</td>
+                    <td>3742-6173 ramal 267/261</td>
+                    <td>11000-5643270093</td>
+                    <td>1324855</td>
+                    <td>10 Mbps</td>
+                    <td>10.38.128.10</td>
+                    <td>10.38.128.1</td>
+                </tr>
+
+                <tr>
+                    <td>GET OE BAC (GET-5 BAC)</td>
+                    <td>Av. Guido Caloi, 100</td>
+                    <td>Felipe/Andréa</td>
+                    <td>3742-6173 ramal 219</td>
+                    <td>11000-3743231891</td>
+                    <td>1324851</td>
+                    <td>10 Mbps</td>
+                    <td style="text-align: center;"> - </td>
+                    <td>10.38.28.1</td>
+                </tr>
+
+                <tr>
+                    <td>Centro Operacional 5</td>
+                    <td>Av. Caloi, 301</td>
+                    <td>Junior/Rogério</td>
+                    <td>5851-7140/5851-7473</td>
+                    <td>11000-3743231999</td>
+                    <td>1324843</td>
+                    <td>10 Mbps</td>
+                    <td style="text-align: center;"> - </td>
+                    <td>10.38.80.1</td>
+                </tr>
+
+                <tr>
+                    <td>GET LE(GET-7)</td>
+                    <td>Rua Americo Salvador Novelli , 88</td>
+                    <td>Robson/Tustoni</td>
+                    <td>3219-0229 r 140</td>
+                    <td>0756/20</td>
+                    <td>1324870</td>
+                    <td>10 Mbps</td>
+                    <td style="text-align: center;"> - </td>
+                    <td>10.38.136.1</td>
+
+                </tr>
+
+                <tr>
+                    <td>Pari(Santa Rita)</td>
+                    <td>Rua Joaquim Carlos, 655</td>
+                    <td>Vicente/Alex</td>
+                    <td>2796-3299 ramal 822/2291-1352</td>
+                    <td>11000-2292282898</td>
+                    <td>1324863</td>
+                    <td>10 Mbps</td>
+                    <td style="text-align: center;"> - </td>
+                    <td>10.38.104.1</td>
+                </tr>
+
+                <tr>
+                    <td>Pátio Alberto Lion</td>
+                    <td>Praça alberto lion, 399 - Cambuci</td>
+                    <td>Diógenes/Marisa</td>
+                    <td>2215-1469/2062-5481</td>
+                    <td>11000-2215259399</td>
+                    <td>1324844</td>
+                    <td>10 Mbps</td>
+                    <td style="text-align: center;"> - </td>
+                    <td>10.38.52.1</td>
+                </tr>
+
+                <tr>
+                    <td>Pário Bandeirantes</td>
+                    <td>Av. dos Bandeirantes, 51 - Vila Olímpia</td>
+                    <td>Alberto/Robson</td>
+                    <td>3849-0600 / 3841-9750</td>
+                    <td>11000-5507003496</td>
+                    <td>1324865</td>
+                    <td>10 Mbps</td>
+                    <td style="text-align: center;"> - </td>
+                    <td>10.38.64.1</td>
+                </tr>
+
+                <tr>
+                    <td>Pátio Leopoldina</td>
+                    <td>Av. Imperatriz Leopoldina, 928 - Vila Leopoldina</td>
+                    <td>Cury/Alberto</td>
+                    <td>3831-3045/3834-1210/3641-6384</td>
+                    <td>0262/20</td>
+                    <td>1324853</td>
+                    <td>10 Mbps</td>
+                    <td style="text-align: center;"> - </td>
+                    <td>10.38.116.1</td>
+                </tr>
+
+                <tr>
+                    <td>Pátio Rangel Pestana</td>
+                    <td>Av. Pq Dom Pedro II, 1000</td>
+                    <td>Tarcísio</td>
+                    <td>3106-1115 ramal 22/ ramal 26</td>
+                    <td>11000-3107349593</td>
+                    <td>1324864</td>
+                    <td>10 Mbps</td>
+                    <td style="text-align: center;"> - </td>
+                    <td>10.38.56.1</td>
+                </tr>
+
+                <tr>
+                    <td>Pátio Tatuapé</td>
+                    <td>Av. Morvan Dias Figueiredo, s/n - Vila Maria</td>
+                    <td>Josias/Gonçalves/Machado</td>
+                    <td>2954-7759/2967-3111/7281-4969</td>
+                    <td>11000-2900034895</td>
+                    <td>211324845</td>
+                    <td>10 Mbps</td>
+                    <td style="text-align: center;"> - </td>
+                    <td>10.38.60.1</td>
+                </tr>
+
+                <tr>
+                    <td>Túnel Airton Senna</td>
+                    <td>Av.Antonio Joaquim Moura x República do líbano, 816</td>
+                    <td>Anderson</td>
+                    <td>3887-8143</td>
+                    <td>11000-3884240790</td>
+                    <td>1324861</td>
+                    <td>10 Mbps</td>
+                    <td style="text-align: center;"> - </td>
+                    <td>10.38.36.1</td>
+                </tr>
+
+                <tr>
+                    <td>Viaduto Jacareí </td>
+                    <td>R. Santo Amaro, 216 </td>
+                    <td>Frederico/Marlene</td>
+                    <td>2252-2389</td>
+                    <td>11000-3107324396</td>
+                    <td>1325600</td>
+                    <td>10 Mbps</td>
+                    <td style="text-align: center;"> - </td>
+                    <td>10.38.72.1</td>
+                </tr>
+
+                <tr>
+                    <td>Viaduto Jacareí </td>
+                    <td>R. Santo Amaro, 216 </td>
+                    <td>Frederico/Marlene</td>
+                    <td>2252-2389</td>
+                    <td>11000-3107367796</td>
+                    <td>1324868</td>
+                    <td>10 Mbps</td>
+                    <td style="text-align: center;"> - </td>
+                    <td>10.38.76.1</td>
+                </tr>
+
+                <tr>
+                    <td>Rio Bonito</td>
+                    <td>Av. Rio Bonito, 2148</td>
+                    <td style="text-align: center;"> - </td>
+                    <td>2941-1201/3619-3551</td>
+                    <td>11000-5666744997</td>
+                    <td>1336986</td>
+                    <td>10 Mbps</td>
+                    <td style="text-align: center;"> - </td>
+                    <td>10.38.120.1</td>
+                </tr>
+
+                <tr>
+                    <td>Estacionamneto Roosevelt</td>
+                    <td>João Guimarãres Rosa s/n em frente ao N°172</td>
+                    <td>Fabiana/Paloma</td>
+                    <td>3120-2626/6820</td>
+                    <td>11000-3256970397</td>
+                    <td>1324860</td>
+                    <td>10 Mbps</td>
+                    <td style="text-align: center;"> - </td>
+                    <td>10.38.152.1</td>
+                </tr>
+
+                <tr>
+                    <td>ED.Gerenalli</td>
+                    <td>Rua Bráulio Gomes, 36</td>
+                    <td>Gilson</td>
+                    <td>3396-8240</td>
+                    <td>11000-3257047098</td>
+                    <td>1324857</td>
+                    <td>10 Mbps</td>
+                    <td>10.38.127.14</td>
+                    <td>10.38.92.1</td>
+                </tr>
+
+                <tr>
+                    <td>Barão de Itapetininga</td>
+                    <td>Rua. Barão de Itapetininga, 18</td>
+                    <td>Gilson / Márcio</td>
+                    <td>3396-8240</td>
+                    <td>11000-3257041497</td>
+                    <td>1324869</td>
+                    <td>10 Mbps</td>
+                    <td>10.38.92.3</td>
+                    <td>10.38.92.1</td>
+                </tr>
+
+                <tr>
+                    <td>Transportes Esperciais - GET 6</td>
+                    <td>Rua Sumidouro, 548</td>
+                    <td>Sandra</td>
+                    <td>3030-2418</td>
+                    <td>11000-3031063899</td>
+                    <td>1324856</td>
+                    <td>10 Mbps</td>
+                    <td style="text-align: center;"> - </td>
+                    <td>10.38.108.1</td>
+                </tr>
+
+                <tr>
+                    <td>Estacionamento Campo Limpo</td>
+                    <td>Rua Francisco José Sales, 85</td>
+                    <td>Oliveira</td>
+                    <td>5842-0836/3151-4043</td>
+                    <td>11000-5841032997</td>
+                    <td>1324874</td>
+                    <td>10 Mbps</td>
+                    <td style="text-align: center;"> - </td>
+                    <td>10.38.148.1</td>
+                </tr>
+
+                <tr>
+                    <td>CONCENTRADOR (Principal)</td>
+                    <td>RUA BELA CINTRA, 385 - PRINCIPAL</td>
+                    <td>IP internet</td>
+                    <td>200 Mbps</td>
+                    <td>0764/20</td>
+                    <td>1340886</td>
+                    <td>Concluído</td>
+                    <td>Concentrador</td>
+                </tr>
+                <tr>
+                    <td>CONCENTRADOR (Backup)</td>
+                    <td>RUA BELA CINTRA, 385 - BKP</td>
+                    <td>IP internet</td>
+                    <td>200 Mbps</td>
+                    <td>0764/20</td>
+                    <td>1340887</td>
+                    <td>Concluído</td>
+                    <td>Concentrador</td>
+                </tr>
+
+                <tr>
+                    <td>CET Barão (Principal)</td>
+                    <td>RUA BARÃO DE ITAPETININGA 18</td>
+                    <td>IP internet</td>
+                    <td>100 Mbps</td>
+                    <td>0809/20</td>
+                    <td>1340890</td>
+                    <td>Concluído</td>
+                    <td>Concentrador</td>
+                </tr>
+                <tr>
+                    <td>CET Barão (Backup)</td>
+                    <td>RUA BARÃO DE ITAPETININGA 18</td>
+                    <td>IP internet</td>
+                    <td>100 Mbps</td>
+                    <td>0809/20</td>
+                    <td>1340891</td>
+                    <td>Concluído</td>
+                    <td>Concentrador</td>
+                </tr>
+
+            </table>
+        </div>
+    </Main>
+
+    <script>
+        function search() {
+            var searchText = document.getElementById('searchInput').value.toUpperCase();
+            var table = document.getElementById('dataTable');
+            var rows = table.getElementsByTagName('tr');
+
+            for (var i = 0; i < rows.length; i++) {
+                var cells = rows[i].getElementsByTagName('td');
+                var found = false;
+
+                for (var j = 0; j < cells.length; j++) {
+                    var cellText = cells[j].textContent || cells[j].innerText;
+                    if (cellText.toUpperCase().indexOf(searchText) > -1) {
+                        found = true;
+                        break;
+                    }
+                }
+
+                if (found) {
+                    rows[i].classList.add('highlight');
+                } else {
+                    rows[i].classList.remove('highlight');
+                }
+            }
+        }
+
+        function reset() {
+            var table = document.getElementById('dataTable');
+            var rows = table.getElementsByTagName('tr');
+
+            for (var i = 0; i < rows.length; i++) {
+                rows[i].classList.remove('highlight');
+            }
+        }
+    </script>
+</body>
+
+</html>
