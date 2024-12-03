@@ -1,21 +1,33 @@
 body{
     background-color: aliceblue;
+    
 }
 
 
 h1{
     text-align: center;
-    margin: 20px;
+    margin: 30px;
+    padding: 20px;
     background-color: rgb(161, 161, 255);
     font-family: "Jaro", sans-serif;
     
- 
 }
+
+input{
+    box-shadow: 3px 3px 1px #000000a4;
+    text-decoration: none;
+}
+
+#att{
+    opacity: 0.5;
+}
+
 td{
     padding: 5px;
 }
 h3{
-    margin-right: 180px;
+    margin-right: 340px;
+    padding-bottom: 5px ;
 }
 th{
     background-color:  rgb(161, 161, 255);
@@ -29,11 +41,12 @@ th{
     text-align: center;
     margin-bottom: 20px;
     border-radius: 10px 10px 10px 10px;
+    
 }
 
 #idInput> input{
-    padding: 5px;
-    border-radius: 2px 2px 2px 2px;
+    padding: 6px;
+
 }
 
 #config_table{
@@ -41,3 +54,29 @@ th{
     justify-content: center;
     
 }
+
+button:hover{
+    transform: scale(1.1);
+    color: red;
+    background-color: white;
+}
+
+h6{
+    font-size: 18px;
+    text-align: center;
+    margin: 10px;
+    font-style: italic;
+    
+}
+.btn{
+    border-radius: 10px;
+    width: 100px;
+    height: 30px;
+    margin-left: 20px;
+    box-shadow: 1px 1px 3px black;
+
+}
+
+
+
+

@@ -11,14 +11,20 @@
 
 <body id="newSearch">
     <header>
-        <h1>PAINEL DE CHAMADOS</h1>
+        
+
+        
+        <div class="cabeca">
+            <h1>PAINEL DE CHAMADOS</h1>
+
+        </div>
     </header>
 
     <Main>
         <div id="idInput">
-            <h3> Pesquisar: </h3> <input type="text" id="searchInput">
-            <button onclick="search()">Pesquisar</button>
-            <button onclick="reset()">Limpar</button>
+            <h3> Pesquisar: </h3> <input type="text" id="searchInput" placeholder="Oque você procura?">
+            <button onclick="search()" class="btn">PESQUISAR</button>
+            <button onclick="reset()" class="btn">LIMPAR</button>
         </div>
 
         <div id="config_table">
@@ -418,6 +424,10 @@
             </table>
         </div>
     </Main>
+    <footer>
+        <h6>Desenvolvido por Victor Galvão - 2024</h6>
+        <h6 id="att">Atualizado 19/09/2024</h6>
+    </footer>
 
     <script>
         function search() {
@@ -453,6 +463,81 @@
                 rows[i].classList.remove('highlight');
             }
         }
+        function normalizeText(text) {
+            return text.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+        }
+
+        function search() {
+            var searchText = normalizeText(document.getElementById('searchInput').value.toUpperCase());
+            var table = document.getElementById('dataTable');
+            var rows = table.getElementsByTagName('tr');
+
+            for (var i = 0; i < rows.length; i++) {
+                var cells = rows[i].getElementsByTagName('td');
+                var found = false;
+
+                for (var j = 0; j < cells.length; j++) {
+                    var cellText = normalizeText(cells[j].textContent || cells[j].innerText);
+                    if (cellText.toUpperCase().indexOf(searchText) > -1) {
+                        found = true;
+                        break;
+                    }
+                }
+
+                if (found) {
+                    rows[i].classList.add('highlight');
+                } else {
+                    rows[i].classList.remove('highlight');
+                }
+            }
+        }
+        function normalizeText(text) {
+            return text.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+        }
+
+        function search() {
+            var searchText = normalizeText(document.getElementById('searchInput').value.toUpperCase());
+            var table = document.getElementById('dataTable');
+            var rows = table.getElementsByTagName('tr');
+            var foundAny = false;
+
+            for (var i = 0; i < rows.length; i++) {
+                var cells = rows[i].getElementsByTagName('td');
+                var found = false;
+
+                for (var j = 0; j < cells.length; j++) {
+                    var cellText = normalizeText(cells[j].textContent || cells[j].innerText);
+                    if (cellText.toUpperCase().indexOf(searchText) > -1) {
+                        found = true;
+                        break;
+                    }
+                }
+                
+
+                if (found) {
+                    rows[i].classList.add('highlight');
+                    if (!foundAny) {
+
+                        rows[i].scrollIntoView({ behavior: 'smooth', block: 'center' });
+                        foundAny = true;
+                    }
+                } else {
+                    rows[i].classList.remove('highlight');
+                }
+            }
+        }
+        document.getElementById('searchInput').addEventListener('keypress', function(event) {
+            if (event.key === 'Enter') {
+                search();
+            }
+        });
+    
+
+
+
+
+
+
     </script>
 </body>
 
